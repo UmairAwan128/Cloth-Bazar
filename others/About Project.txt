@@ -1,0 +1,147 @@
+First according to industry get requirments from client and create an initial design/prototype to show the client that if
+he requires this if he says yes this will be a prove that he accepted at these requirments and in future you will be secured
+from any problem from the client.
+
+In case of Visual Studio for creating a new project select a "BlankSolution" its in Installed->OtherProjectTypes->VisualStudioSolutions
+the benfit of BlankSolution is that as our project will have many layers like Services,DB,Web  so these will be inside this solution as
+seperate projects so The solution sapce name would be "ClothBazar" i.e our brandName and the projects inside this SolutionSpace
+would be like ClothBazar_DB,ClothBazar_Web, e.t.c if we choosed Asp.netWebApplication at the start we will be naming it like ClothBazarWebsite
+and this will be name of our solutionSpace also and webiste project also which will not be a good namming convention another benifit
+of seperate projects is if tommorow e.g we want to add an entity we will just open the entity project or any ther thing we will open
+that specific project and commit changes there so only that project .dll file will be updated not the all appplication also
+if we want to transfer our web app to mobile we will just add mobileUI project and backend we will already having DB created.
+1. Add a BlankSolution .
+2. Add a Asp.netWebApplication project named "ClothBazar.Web" in this Solution. then select Mvc template also checkbox MVC refernece 
+   and select the "Change Authentication" button and select the "Individual user Account" then click Ok so create this Project..
+   we selected "Individual user Account" the benifit of selecting this is now when our this Webproject will be it will be 
+   having Register and Login Functionality 100% complete and working  i.e even for this the Database will also be created
+   so once you register your details will be saved in DB and then u can login any time....   
+3. Added new ClassLibrary type project named "ClothBazar.Entities" Enitities will be in seperate project as if in the same
+   "ClothBazar.Web" project there may be some referencing issues like circular dependency may be faced later..
+4. Added new ClassLibrary type project named "ClothBazar.Database" this will be having the Database i.e contextClass,EntityFramework e.t.c
+  
+
+Controler can be shared i.e A controler can be having various Actions refering various Views but if An entity like Product
+have various operations/Actions i.e more then one we seperately create such controler
+Get: to get data/View
+Post : to submit data/form
+put: to update
+Delete: to delete
+To avoid circular dependeny b/w two project create a new project b/w them having the resoruce both projects need e.g
+if Cloth.Web contains DB and as Cloth.Services need to access DB so it will refer to Cloth.Web and as Cloth.Web needs
+to access services so it will add reference of Cloth.Services so circulardependency so solution is create Cloth.Database
+and both will be refering to it like Many to Many relation and it will be b/w table..
+
+
+Models: are not same as the Entity classes as in Entity we have a list of attributes if in a view we want to show/send all the
+attributes of an entity or from View we want to sendback to Contler we will create an entity object in controler and pass that object
+ to View or from View we will get data directly in entity class object ...
+but in case on the view we want to show only some of the attributes of Entity to the View or we want to show some selected
+attributes from Various entities e.g on HomePage we will be sending some of the Porduct Attributes some Categories and some other
+so we will create a Model class having all that attributes and create that Modelclass object and pass it to the View or We mayBe 
+recieving attributes from View to Controler e.g Student Enrollment Form for the Semester in that for we will be writting studentName
+regNo other related info and also the list subjects that we are going to pick so as you can see here we get that this info is
+for two tables i.e student Personal info for StudentTable and subjects he picked this info is for SubjectTable so as two tables 
+so in this case a single ModelClass will be created that will be having both these classes attributes we need and then we 
+will now get the data from View in this ModelClass object and then from this Model class we will send data to the required Entities  
+
+
+
+Cookies:(it is a way of storing user related temporay data in user browser(RAM) not on Harddisk)(intrestingly using this we are shown related ADS)  
+  What type of data is stored in Cookies : a data which is temporary type e.g while adding various products to cart
+  this list is stored in UserPc but when its finalized(i.e user may remove a product) this data is sent to Server
+Why AddToCart and UserRelated info is not stored in server but in the User Pc such data is cookies
+
+
+Config class in ClothBazar.Entities :     the follwing class will have a list of attributes related to Site this will be info shown on the HomePage its like the
+ related facebook/twitter account site contactNo or various headings like topDeals, summerArrivals e.t.c these values
+ should not be hardcoded their values may be changed in future or we may be saling this Website to various clients
+ so for such things(Links/Heading) we create a class traditionally named as Config.cs we named as myConfig in Entities Project so its table will
+    be created and we store data/info we want to display and later on we can also change this info by accessing this class.
+    but if we create a seperate attribute for each info i.e for related faceBook account we careted a if we carete an attribute here like
+    "FBaccount" in table it will have only one value always all other attributes like this will have only one value so the table will have only one row
+    so to avoid this we created two attributs in this class "key" and "value" both string key will have name like "FBaccount" and
+    "Value" will have its realted value i.e facbook account link..    
+
+
+URL Helper: (@URL("ActionName","ControlerName")) Some Websites have Coustomized URL for aceesing various parts of Site
+right now our default convention is "/ControlerName/ActionName" we can change them also this may be benificial in SEO
+in our site if we need to access any action/view we are now writting there path hardcoded as in case of Ajax req in JS code
+we write   url: '/ContrlerName/ActionName'  also we need to remember its syntax so for ease we can write the same thing as
+
+   
+Pagination: Let say we have created our project and we have added thousands of products in it now in the View of ProductTable
+i.e when we call to show/get all the products it will takw very long time to get all products and then show them in the table
+also in this case the ProductTable will be very lengthy so the solution is pagination i.e in this case when we request to get
+all the products from DB it will only get first 50 and show them then we will again request it to get the next 50 those
+50 may be loaded below the early 50 or on the next page as per requirement so this concept Pagination will also increase
+efficiency of Website and also Length..
+In our project we applied two types of pagination 1 on productTable i.e our own created Pagination its like Google details can be
+found here    	   second on CategoriesTbale
+we applied Pagination from built in JQuery library for Pagination/Datatables found here    https://datatables.net/   for applying
+this we included two files ref added on top of page found on the above link so that on our"CategoriesTable below Pagination will 
+be applied also we need to assign id to that table and some JS code below in <script>___</script> i.e  just this on ready of the page  
+   $('#myTable').DataTable();  and pagination is  applied but drawback is even this is not the true pagination as all records are
+ loaded from DB even now not a few so slow startUp  will be faced when we have 10000 of records for minimizingg this problem we need 
+to add some code on controler even create a seperate class and various servives which is explained in this Link   
+       https://www.c-sharpcorner.com/article/using-datatables-grid-with-asp-net-mvc/
+
+
+Data Validation: Validating data while reciving info from user to save it to DB e.g in Create Product form we should apply condition
+on Name,Image field as required and Description as optional if we don,t apply such conditions we will also be able to save
+a product which doesnot have a Name and Image i.e Empty Product so Validations are important and should be applied....
+We Can Apply Such Validations in Two Ways 
+1. By using DataAnnotations in Entity Classes i.e using [Required] on field u want as required and don,t write it for optional behaviour
+   and [MinLength(5)] for defining the minimum lenght for a field  For all MVC DataAnnotations Search on google we refer the folling link
+   https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6  
+   one Important thing that these DataAnnotations that we write in Entity Classes will be like Validation for the Server side only so for
+   DataValidations on Client side we may be using JavaScript code or C# for showing Error Messsage we should apply both 
+   as on Client side or Browser we can also disable JavaScript so inthis case this JavaScript Validation will be useless
+   but in this case Server side validation will be there so either way we will have one Validation..
+   SO for the Client/BrowserSide Validation we also write these same DataAnnotations what we write there in Entities also we write 
+   them in the ModelClass(NewProductViewModel) as this Model class object is recieved by Create() or on Creation of Product so now 
+   if(ModelState.isValid){ } written in Create() of Product becomes applicable and now it will only add a valid Product to DB 
+   then we added this in create.cshtml 
+   @*<span class="text-danger">*</span> below written in label is red * shows that this field is required*@
+   <label> Name<span class="text-danger">*</span> </label>
+   also added this error message
+   fail(function (XMLHttpRequest, textStatus, errorThrown) {
+   swal({
+     title: "Warning",
+     text: "Please enter all required fields.",
+     icon: "warning",
+     buttons: true,
+     dangerMode: true,
+   }) 
+   Now we want to declare the input field as Required so we wrote this  <input name="Name" required /> but this will 
+   not work as "required" works if we submit the form but as we are not submitting the form or we don,e have a button
+   that has type=submit i.e <button type="Submit >Save</button> but using the JS code to send the data of all input
+   fields to server i.e using the serialize() method so for the declaring any field Required we need to additionally
+   write it JSCode on the click of Save button and also we need to inherit JqueryValidationScriptFile in our project
+   for any file like this they are searched as "jquery validate cdn" and we download the link for the file here 
+   https://cdnjs.com/libraries/jquery-validate and the file link is 
+   https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js  
+   this file is also inkine so internet needed for this   ... 
+    @*we wanted to declare the input fields in create.cshtml as Required so we wrote this  <input name="Name" required /> but this will
+    not work as "required" works if we submit the form but as we are not submitting the form or we don,e have a button
+    that has type=submit i.e <button type="Submit >Save</button> but using the JS code to send the data of all input
+    fields to server i.e using the serialize() method so for the declaring any field Required we need to additionally
+    write it JSCode on the click of Save button and also we need to inherit JqueryValidationScriptFile in our project
+    for any file like this they are searched as " jquery validate cdn" and we download the link for the file here
+    https://cdnjs.com/libraries/jquery-validate and the online file link is
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js
+    we included it on top of index.cshtml this file needs internet as its online not in our project   ...*@
+   @*and we used these links for help i.e how to use required and other using jquery for this we searched
+    "Jquery form validation or Jquery Validation " on google and get for help https://jqueryvalidation.org/validate/
+    https://jqueryvalidation.org/files/demo/ and  https://stackoverflow.com/questions/15060292/a-simple-jquery-form-validation-script
+       *@   //for this the syntax is use Validate() on the Form which you want to validate so
+   //after this client side validation we should be make sure that on the click of save button the form should be valid
+    //i.e all the fields value should be according to the conditions we defined in above in ("#createProduct").Validate(){}
+    //and also according to the conditions/DataAnnotation we applied in Entity classes so
+
+2.Fluent API i.e done by creating onModelCreation() method in Context class and in this we will define
+     conditions/Attributes or relations for the fields or tables this mehtod willbe called while creaing Database
+     
+So fluent API/DataAnnotation is for Validation along the Server side but for the validation on client
+side we will be either using JSCode/HTML
+                          

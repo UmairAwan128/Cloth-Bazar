@@ -1,0 +1,165 @@
+﻿@model ClothBazar.Web.ViewModels.OrderViewModel
+@{
+    ViewBag.Title = "Orders";
+}
+
+@*we wanted to declare the input fields in create.cshtml as Required so we wrote this  <input name="Name" required /> but this will
+    not work as "required" works if we submit the form but as we are not submitting the form or we don,e have a button
+    that has type=submit i.e <button type="Submit >Save</button> but using the JS code to send the data of all input
+    fields to server i.e using the serialize() method so for the declaring any field Required we need to additionally
+    write it JSCode on the click of Save button and also we need to inherit JqueryValidationScriptFile in our project
+    for any file like this they are searched as " jquery validate cdn" and we download the link for the file here
+    https://cdnjs.com/libraries/jquery-validate and the online file link is
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js
+    this file needs internet as its online not in our project   ...*@
+
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>*@
+<script src="~/Scripts/jquery.validate.min.js"></script>
+
+
+@*and we used these links for help i.e how to use required and other using jquery for this we searched
+    "Jquery form validation or Jquery Validation " on google and get https://jqueryvalidation.org/validate/
+    https://stackoverflow.com/questions/15060292/a-simple-jquery-form-validation-script*@
+
+
+
+
+@* it is a way to call a view/partailView  on a specific part of any page/View we are calling here the
+    View using the ActionMethod Name ProductTable() in ProductControler rememer the action we passed here
+    must be returning a parialView OtherWise in case of normal View it may be linked to SharedView
+    so it will be returning whole view with its content and SharedView COntent
+    so to get only the ProductTable View Content not the sharredView we returned Partial View from the ProductTable() acion now*@
+
+@* we added this in the div as on Ajax Call in ProductTable.cshtml we call it self agin in JavaScript code
+    so an updated table of records according to the string user enter will be generated and passed in a partailView
+    which also contains SearchBar so we will see two searchBars and tables on page so to avoid this we
+    created a div here and in this we set the html passed by partial view which is same what it has
+    but that passed HTML will have Table according to searchedString and as we set that as html to this
+    div so the previous code or table/SearchBar will be overwritten or removed and new will be placed*@
+
+<section class="flat-row flat-iconbox">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title-section">
+                    <h2 class="title">
+                        Orders
+                    </h2>
+                </div><!-- /.title-section -->
+            </div><!-- /.col-md-12 -->
+        </div>
+
+        <div id="tableContainer" style="padding-top: 15px">
+            <form method="post">
+
+                <div class="row ">
+                    <div class="col-md-9  form-group">
+
+                        <input name="searchTerm" id="searchTxt" class="form-control" placeholder="Enter something" value="@Model.searchTerm">
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary" id="searchBtn">Search</button>
+                        <a class="btn btn-primary" href="@Url.Action("Index", "Orders", new { WpageNo=1 })" id="resetBtn">Reset</a>
+                    </div>
+
+
+                </div>
+            </form>
+            <div>
+                <table id="OrdersTable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="font-weight-bold">User Id</th>
+                            <th class="font-weight-bold">Total Price</th>
+                            <th class="font-weight-bold">Status</th>
+                            <th class="font-weight-bold">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Orders != null && Model.Orders.Count > 0)
+                        {
+                            foreach (var order in Model.Orders)
+                            {
+                        <tr>
+                            <td>@order.UserId</td>
+                            <td>@order.TotalAmount</td>
+                            <td>@order.Status</td>
+
+                            <td class="wrap-td">
+                                <a class="detailBtn btn btn-danger" href="@Url.Action("Details", "Orders", new { Id=order.Id })" data-Id="@order.Id">Details</a>
+                            </td>
+                        </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr><td colspan="4" class="text-danger">No Orders Found</td></tr>
+                        }
+
+                    </tbody>
+                </table>
+
+                @* revious and next page buttons *@
+                @*<div>*@
+                @* class="PageNavigationButton" is our own name *@
+
+                @*@if (Model.PageNo != 1)
+                {  //if PageNo is not equal to 1 then create button or if PageNo is 1 then skip button creation
+                    <button class="PageNavigationButton" data-pageNo="@( Model.PageNo - 1 )">Previous</button>
+                }
+
+                <button class="PageNavigationButton" data-pageNo="@( Model.PageNo + 1 )">Next</button>
+            </div>*@
+
+
+                <div>
+
+                    @if (Model.pager != null && Model.pager.TotalPages > 1)  //Model.pager.TotalPages>1 means if only one page don,t show pagination
+                    { //if pagger object is passed then we need to appply pagination
+
+                        if (Model.pager.CurrentPage > 1)  //then show previous and First Button otherwise
+                        {//don,t show them or they will be hiddent if we are on first page
+                            <a class="PageNavigationButton btn btn-danger" data-pageNo="1" href="@Url.Action("Index", "Orders", new { searchTerm=Model.searchTerm, status=Model.Status, pageNo=1 })">First</a>
+                            <a class="PageNavigationButton btn btn-danger" data-pageNo="@( Model.pager.CurrentPage - 1 )" href="@Url.Action("Index", "Orders", new { searchTerm=Model.searchTerm, status=Model.Status, pageNo=Model.pager.CurrentPage-1 })">Previous</a>
+                        }
+
+                        for (int page = Model.pager.StartPage; page <= Model.pager.EndPage; page++)
+                        { //page will have the pageNo int and Endpage will have the pageNo of the Last Page
+                            string activeClass = Model.pager.CurrentPage == page ? "active bg-info" : string.Empty;
+                            <a class=" @activeClass PageNavigationButton btn btn-danger" data-pageNo="@page" href="@Url.Action("Index", "Orders", new { searchTerm=Model.searchTerm, status=Model.Status, pageNo=page })" >@page</a>
+                        }
+
+                        if (Model.pager.CurrentPage < Model.pager.TotalPages)//then show Last and Next Button otherwise
+                        {//don,t show them or they will be hiddent if last page
+                            <a class="PageNavigationButton btn btn-danger" data-pageNo="@( Model.pager.CurrentPage + 1 )" href="@Url.Action("Index", "Orders", new { searchTerm=Model.searchTerm, status=Model.Status, pageNo=Model.pager.CurrentPage+1 })" >Next</a>
+                            <a class="PageNavigationButton btn btn-danger" data-pageNo="@( Model.pager.EndPage )" href="@Url.Action("Index", "Orders", new { searchTerm=Model.searchTerm, status=Model.Status, pageNo=Model.pager.EndPage })" >Last</a>
+                        }
+
+                    }
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr />
+
+        @* in this Div by using JScript code we will pass here create()/Edit() Action PartialView so it will be here in this div  *@
+        <div id="actionContainer">
+
+        </div>
+    </div>
+</section>
+
+<script>
+
+    function focusAction(controlToFocus) {
+        $('html, body').animate({
+            //scrollTop: $("#actionContainer").offset().top - 100
+            scrollTop: $("#" + controlToFocus).offset().top - 100 // so now it will focus on any
+            //part/controler whose reference is passed to it
+        }, 1000);
+    }
+</script>
+

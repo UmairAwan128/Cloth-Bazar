@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2EF221FC-70FB-4B45-8B90-0F8A8E0716C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClothBazar.Database</RootNamespace>
+    <AssemblyName>ClothBazar.Database</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CBContext.cs" />
+    <Compile Include="Migrations\201808131141038_initialized.cs" />
+    <Compile Include="Migrations\201808131141038_initialized.Designer.cs">
+      <DependentUpon>201808131141038_initialized.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808181118044_ImgURLAddedCategory.cs" />
+    <Compile Include="Migrations\201808181118044_ImgURLAddedCategory.Designer.cs">
+      <DependentUpon>201808181118044_ImgURLAddedCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808200604317_addedIsFeatured.cs" />
+    <Compile Include="Migrations\201808200604317_addedIsFeatured.Designer.cs">
+      <DependentUpon>201808200604317_addedIsFeatured.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808241012125_ImageURLAddedProduct.cs" />
+    <Compile Include="Migrations\201808241012125_ImageURLAddedProduct.Designer.cs">
+      <DependentUpon>201808241012125_ImageURLAddedProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808250836087_virtualadded.cs" />
+    <Compile Include="Migrations\201808250836087_virtualadded.Designer.cs">
+      <DependentUpon>201808250836087_virtualadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808300743082_myConfigTableAdded.cs" />
+    <Compile Include="Migrations\201808300743082_myConfigTableAdded.Designer.cs">
+      <DependentUpon>201808300743082_myConfigTableAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809021534066_addedBasicValidations.cs" />
+    <Compile Include="Migrations\201809021534066_addedBasicValidations.Designer.cs">
+      <DependentUpon>201809021534066_addedBasicValidations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811301953584_AddedOrderAndOrderItemTbl.cs" />
+    <Compile Include="Migrations\201811301953584_AddedOrderAndOrderItemTbl.Designer.cs">
+      <DependentUpon>201811301953584_AddedOrderAndOrderItemTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812010746429_AddedQuantityInOrderItemTbl.cs" />
+    <Compile Include="Migrations\201812010746429_AddedQuantityInOrderItemTbl.Designer.cs">
+      <DependentUpon>201812010746429_AddedQuantityInOrderItemTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClothBazar.Entities\ClothBazar.Entities.csproj">
+      <Project>{90A91C0D-22EB-4356-BDCF-7FF4B398179B}</Project>
+      <Name>ClothBazar.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808131141038_initialized.resx">
+      <DependentUpon>201808131141038_initialized.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808181118044_ImgURLAddedCategory.resx">
+      <DependentUpon>201808181118044_ImgURLAddedCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808200604317_addedIsFeatured.resx">
+      <DependentUpon>201808200604317_addedIsFeatured.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808241012125_ImageURLAddedProduct.resx">
+      <DependentUpon>201808241012125_ImageURLAddedProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808250836087_virtualadded.resx">
+      <DependentUpon>201808250836087_virtualadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808300743082_myConfigTableAdded.resx">
+      <DependentUpon>201808300743082_myConfigTableAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809021534066_addedBasicValidations.resx">
+      <DependentUpon>201809021534066_addedBasicValidations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811301953584_AddedOrderAndOrderItemTbl.resx">
+      <DependentUpon>201811301953584_AddedOrderAndOrderItemTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812010746429_AddedQuantityInOrderItemTbl.resx">
+      <DependentUpon>201812010746429_AddedQuantityInOrderItemTbl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

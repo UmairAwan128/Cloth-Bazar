@@ -1,0 +1,241 @@
+﻿@model List<Category> 
+@{
+    ViewBag.Title = "Create";
+    var imageURL = "/Content/images/system/placeholder.png";
+}
+
+<h2>Create Product</h2>
+
+<form id="createProduct">
+    <div class="row">
+
+        <div class="col-md-8">
+            <div class="form-group">
+                @*<span class="text-danger">*</span> below written in label is red * shows that this field is required*@
+                <label> Name<span class="text-danger">*</span> </label>
+                @* here in this file we didn,t added a Model(Category) reference but still we can recieve what
+                    user enter in these textboxes we can do this by naming the textBox same as the propertyName
+                    of the Class/Entity whose object is required/recieved by the POst method of Controller of this View..*@
+                <input class="form-control" name="Name" placeholder="Enter Product Name" />
+                @* so here as name="Name" so in the Name property of the Category Entity the value in the TextBox will be assigned
+                    and hence hese values will be passed to controler Action Method Create() as Category entity obj*@
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <input class="form-control" name="Description" placeholder="Enter Product Description" />
+            </div>
+
+
+            @* for the Image *@
+            <div class="form-group">
+                @* this is very intresting when the user will select a file/image from here instantly we will send the image to Server to save it
+                    and once its safed we will show the image to the user and till now user didn,t pressed the Save Button so the Name and Description
+                    is not safed till now they will be safed when Save button is pressed*@
+                <label>Image</label>
+                <input class="form-control" id="imageUpload" name="Image" type="file" accept=".png, .jpg" />
+                @* we want to Perform a functionality on the change of the value of this <input> that is whenever user upload Image
+                    the uploaded image will be shown here as we passed here the path of image uploaded in "src"*@
+            </div>
+            @* and as we want to save this path in database so created here <input> that can have text and we will access its value in controler to save but its hidden
+                as its for save pupose only So we will assign the same pathValue that we assigned to above <img id="categoryImage"> using JScript*@
+            <input id="ImageURL" name="ImageURL" type="hidden" />
+
+
+            @* here we will be showing all the categories available in database *@
+            <div class="form-group">
+                <label>Category</label>
+                <select class="form-control" name="CategoryID">
+                    @foreach (var category in Model)
+                    {
+                        //@category.Name here will be shown as name to the user but in backend we will be storing the Id of the category aginst a
+                        //product so in the value attribute of the <option> tag we assigned @category.Id so from here we we will get Id to store in DB
+                        <option value="@category.Id">@category.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Price<span class="text-danger">*</span></label>
+                <input class="form-control" name="Price" placeholder="Enter Product Price" />
+            </div>
+            @* $("#createProduct").serialize() can be used in Console to check that what values are we getting from input fields *@
+            <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
+            <button type="button" class="btn btn-primary" id="cancelBtn">Cancel</button>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group thumb">
+                <img src="@imageURL" class="img-thumbnail img-fluid form-control" id="productImage" />
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+
+<script>
+
+    $("#cancelBtn").click(function () {
+        $("#actionContainer").html("");// this will move null in actionContainer Div in whihc we placed the CreateForm so this null will be overwrittrn and
+        //create form will be removed
+        focusAction("tableContainer");  //this method is in the index.cshtml as this code was common so there
+                //we passed it name of the Container/Div to focus that
+    });
+
+
+
+    @*we wanted to declare the input fields in create.cshtml as Required so we wrote this  <input name="Name" required /> but this will
+    not work as "required" works if we submit the form but as we are not submitting the form or we don,e have a button
+    that has type=submit i.e <button type="Submit >Save</button> but using the JS code to send the data of all input
+    fields to server i.e using the serialize() method so for the declaring any field Required we need to additionally
+    write it JSCode on the click of Save button and also we need to inherit JqueryValidationScriptFile in our project
+    for any file like this they are searched as " jquery validate cdn" and we download the link for the file here
+    https://cdnjs.com/libraries/jquery-validate and the online file link is
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js
+    we included it on top of index.cshtml this file needs internet as its online not in our project   ...*@
+   @*and we used these links for help i.e how to use required and other using jquery for this we searched
+    "Jquery form validation or Jquery Validation " on google and get for help https://jqueryvalidation.org/validate/
+    https://jqueryvalidation.org/files/demo/ and  https://stackoverflow.com/questions/15060292/a-simple-jquery-form-validation-script
+       *@
+    //for this the syntax is use Validate() on the Form which you want to validate so
+    $("#createProduct").validate({
+        rules: {//here we define the rules against "Name" Property of the input fields so for e.g
+          //< input class= "form-control" name="Name" /> we  define it rules as
+            Name: {
+                   // email:true,  //can be used for email verification
+                required: true,
+                minlength: 5,
+                maxlength: 50
+                //For other special types like CNIC has specific format 000-0000-000  so for this we use RegularExpression 
+                //on google we can find regular expression of which we required we have some RegularExpression creator/tester sites
+            },
+            Description: {
+                maxlength:500
+            },
+            Price: {
+                required: true,
+                number: true,
+                range: [1, 100000]
+            }
+        },
+        messages: {//here we write error messages that will be shown against that properties if they are not fullfilled
+            Name: {
+                required: 'Name is Rquired',   //if Name field is left empty show this
+                //email: 'should be email',
+                minlength: 'Minimum length is 5', //if Name value get greater then 5 show this
+                maxlength: 'Maximum length is 50'
+            },
+            Description: {
+                maxlength: 'Maximum length is 500'
+            },
+            Price: {
+                required: 'Price is Required',
+                number: 'should be an integer',
+                range: 'price should be within 1-100000'
+            }
+        }
+    });      //this whole JS code will run on the change of every input field of createProduct form()..
+    //after this client side validation we should be make sure that on the click of save button the form should be valid
+    //i.e all the fields value should be according to the conditions we defined in above in ("#createProduct").Validate(){}
+    //and also according to the conditions/DataAnnotation we applied in Entity classes so
+    $("#saveBtn").click(function () {
+       
+        //("#createProduct").Valid == true     why true not comming 
+
+        if ($("#createProduct").valid()) { //this checks if the form is valid according to JSCode we write in ("#createProduct").Validate(){}
+       
+            $.ajax({
+
+                type: "Post",
+                //its URLHelper its detail is int CategoriesTable.cshtml on SearchBtn click function in JS<script> code
+                url: '@Url.Action("Create", "Product")',
+                //url: "/Product/Create",
+                //serialize() method will return all the TextFields value in the form in a single string
+                //of Name and Value pair and we don,t need to seperate them it will be seperated and assigned to Product object parameter of Create()..
+                data: $("#createProduct").serialize()
+            })
+                .done(function (data) {
+
+                    //as we called the Create() Action but it after this action creates the product it redirects control to ProductTable() Action
+                    //which retreive data from Product table and returns a partialView having Table and Search which we placed in Div whose Id is tableContainer
+                    //in Index view so old html will be overWritten and we will see updated tablewithout reloading the page
+                    $("#tableContainer").html(data);
+                    //after adding the product we want to remove the Create form from the View so
+                    $("#actionContainer").html("");// this will move null in actionContainer Div in whihc we placed the CreateForm so this null will be overwrittrn
+                    //and the create Product form will disappear
+                    focusAction("tableContainer");  //this method is in the index.cshtml as this code was common so there
+                    //we passed it name of the Container/Div to focus that
+
+                })
+                .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    //here we shown the SweetAlert Message we inherited SweetAlert script file reference
+                    //in the end of _Layout.cshtml file but we didnot moved it Script file in Project so
+                    //we entered it online URL in ref so we need internet to show any sweet alert
+                    swal({
+                        title: "Warning",
+                        text: "Please enter all required fields.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                });
+        }
+        else {
+            swal({
+                title: "JS Conditions Warning",
+                text: "Please fill all fields according to requirment",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+        }
+    });
+
+
+
+    $("#imageUpload").change(function () {
+        var element = this; //as this so element will have the reference of the element(Image) on which this function is applied
+
+        var formData = new FormData(); //created here a new FormData obj as its accessible on server and also when we submitForm
+        //VisualStudio creates object of FormData and using that we can also access all the Values but as here we want before Submitting
+        //so we created here object own our own to send Data to Server..
+
+        //totalFiles will have the totalNumber of files user have selected i.e User uploaded how many files/Images here he will upload
+        //only one so this code is for both if single file uploaded or multiple files..
+        var totalFiles = element.files.length;
+
+        //here adding the files that user uploaded into FormData
+        for (var i = 0; i < totalFiles; i++) {
+            var file = element.files[i]; //first get the file
+            formData.append("Photo", file); //then add to formData
+        }
+
+        //now send the formData obj to the UploadImage() of SharedController
+        $.ajax({
+            type: "Post",
+            //its URLHelper its detail is int CategoriesTable.cshtml on SearchBtn click function in JS <script> code
+            url: '@Url.Action("UploadImage", "Shared")',
+            //url: "/Shared/UploadImage",
+            data: formData,
+            dataType: 'json', //tell the type and other things
+            contentType: false,
+            processData: false
+        })
+            .done(function (response) { //UploadImage() Action will return an annonymous obj in the form of Json in that object we are getting two things
+                //1. we will get ImageURL i.e Path of Image in Server and
+                //2. the Value of "Success(type:bool)" i.e either the the Image is saved or Not
+                //debugger; //means when the control comes here program Pauses like Breakpoint
+                //console.log(response);  //to show the value of response in the Console of the browser
+                if (response.Success == true) {
+                    $("#productImage").attr("src", response.ImageURL) //assign the Url to <img> tag above to show
+                    $("#ImageURL").val(response.ImageURL) //also assign the ImageURL/Path to the <input id="ImageURL"> so we can store it in DB
+                }
+            })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Failed");
+            });
+    });
+
+</script>

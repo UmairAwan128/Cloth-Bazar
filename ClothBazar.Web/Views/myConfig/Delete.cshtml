@@ -1,0 +1,24 @@
+﻿@model ClothBazar.Web.ViewModels.myConfigModel
+
+
+@using (Html.BeginForm("delete", "myConfig", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="input-group col-lg-6">
+            <label>Key:</label>
+            @Html.TextBox("Key", Model.Key, new { placeholder = "Key", @class = "form-control", @readonly = true })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <label>Value:</label>
+            @Html.TextBox("Value", Model.Value, new { placeholder = "Value", @class = "form-control",  @readonly = true })
+
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-remove"></span> Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-save"></span> No</button>
+    </div>
+}
+

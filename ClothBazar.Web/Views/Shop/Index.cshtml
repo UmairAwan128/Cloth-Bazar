@@ -1,0 +1,282 @@
+﻿@model ClothBazar.Web.ViewModels.ShopViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<!-- Page title -->
+<div class="page-title parallax parallax1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-title-heading">
+                    <h1 class="title">Slidebar Shop</h1>
+                </div><!-- /.page-title-heading -->
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a href="@Url.Action("Index", "Shop")">Shop</a></li>
+                    </ul>
+                </div><!-- /.breadcrumbs -->
+            </div><!-- /.col-md-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div><!-- /.page-title -->
+
+<section class="flat-row main-shop shop-slidebar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+                <div class="sidebar slidebar-shop">
+                    <div class="widget widget-search">
+                        <form role="search" method="get" class="search-form" action="@Url.Action("Index", "Shop")">
+                            <label>
+                                @* we did not passed parameter while in Url.Action() as it a form and we linked
+                    directly the <input>  by assigning it the same name as the parameter i.e "searchTerm" so its value will be
+                                                auto assigned to the "searchTerm" parameter of the Index action*@
+                                <input type="search" class="search-field" placeholder="Search …" value="@Model.searchTerm" name="searchTerm">
+                            </label>
+                            <input type="submit" class="search-submit" value="Search">
+                        </form>
+                    </div><!-- /.widget-search -->
+
+                    <div class="widget widget-sort-by">
+                        <h5 class="widget-title">
+                            Sort By
+                        </h5>
+                        <ul>
+                            @*for multiple filters at a time on page e.g show product sortby=newest and category = men
+        //we pass here the categoryId that is currently selected on page so next time when load page it will be selected and filtered
+                                products according to both
+                            *@
+                            @* dataLink is our own created class which we use to identify specific elements while we do ajax calls *@
+                            <li><a data-href="@Url.Action("FilterProducts","Shop",new { sortBy = (int)SortByEnum.Popularity, categoryId = Model.categoryId })" class=" dataLink @(Model.sortBy.HasValue? Model.sortBy.Value == (int)SortByEnum.Popularity ? "active" : string.Empty : string.Empty)">Popularity</a></li>
+                            <li><a data-href="@Url.Action("FilterProducts","Shop",new { sortBy = (int)SortByEnum.Default, categoryId = Model.categoryId })" class=" dataLink @(Model.sortBy.HasValue? Model.sortBy.Value == (int)SortByEnum.Default ? "active" : string.Empty : string.Empty)">Default - Newest</a></li>
+                            <li><a data-href="@Url.Action("FilterProducts","Shop",new { sortBy = (int)SortByEnum.PriceLowToHigh, categoryId = Model.categoryId })" class=" dataLink @(Model.sortBy.HasValue? Model.sortBy.Value == (int)SortByEnum.PriceLowToHigh ? "active" : string.Empty : string.Empty)">Price: low to high</a></li>
+                            <li><a data-href="@Url.Action("FilterProducts","Shop",new { sortBy = (int)SortByEnum.PriceHighToLow, categoryId = Model.categoryId })" class=" dataLink @(Model.sortBy.HasValue? Model.sortBy.Value == (int)SortByEnum.PriceHighToLow ? "active" : string.Empty : string.Empty)">Price: high to low</a></li>
+                        </ul>
+                    </div><!-- /.widget-sort-by -->
+
+                    <div class="widget widget_tag">
+                        <h5 class="widget-title">
+                            Featured Categories
+                        </h5>
+                        <div class="tag-list">
+
+                            <a data-href="@Url.Action("FilterProducts", "Shop", new { sortBy= Model.sortBy})" class="dataLink">All products</a>
+
+                            @foreach (var category in Model.FeaturedCategories)
+                            {     //sortBy= Model.sortBy  means here we passed the current value of sortby to Controller so it returns this value next time with additional filter
+                                <a data-href="@Url.Action("FilterProducts", "Shop", new { categoryId = category.Id, sortBy= Model.sortBy})" class=" dataLink @(Model.categoryId.HasValue && Model.categoryId.Value == category.Id ? "active" : string.Empty )">@category.Name</a>
+                            }
+
+                        </div>
+                    </div><!-- /.widget -->
+
+                    <div class="widget widget-price">
+                        <h5 class="widget-title">Filter by price</h5>
+                        <div class="price-filter">
+
+                            @* the folloing is slider of Price its Code and its functionality and design is both in
+                the jquery for mak this working first we included a jquery library at end of _layout.cshtml
+                 i.e <script src="~/Content/javascript/jquery-ui.js"></script> and for using this library function
+                slider we wrote js for this at the end of this file..
+                we applied the Js on the div below with ID slide-range
+                            *@
+                            <div id="slide-range"></div>
+                            <p class="amount">
+                                Price: <input type="text" id="amount" disabled="">
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="widget widget-color">
+                        <h5 class="widget-title">
+                            Colors
+                        </h5>
+                        <ul class="flat-color-list icon-left">
+                            <li><a href="#" class="yellow"></a><span>Yellow</span> <span class="pull-right">25</span></li>
+                            <li><a href="#" class="pink"> </a><span>White</span> <span class="pull-right">16</span></li>
+                            <li><a href="#" class="red active"></a><span>Red</span> <span class="pull-right">28</span></li>
+                            <li><a href="#" class="black"></a><span>Black</span> <span class="pull-right">12</span></li>
+                            <li><a href="#" class="blue"></a><span>Green</span> <span class="pull-right">0</span></li>
+                        </ul>
+                    </div><!-- /.widget-color -->
+                    <div class="widget widget-size">
+                        <h5 class="widget-title">
+                            Size
+                        </h5>
+                        <ul>
+                            <li class="checkbox">
+                                <input type="checkbox" name="checkbok1" id="checkbox1">
+                                <label for="checkbox1">
+                                    <a href="#">L</a>
+                                </label>
+                            </li>
+                            <li class="checkbox">
+                                <input type="checkbox" name="checkbok2" id="checkbox2">
+                                <label for="checkbox2">
+                                    <a href="#">M</a>
+                                </label>
+                            </li>
+                            <li class="checkbox">
+                                <input type="checkbox" name="checkbok3" id="checkbox3">
+                                <label for="checkbox3">
+                                    <a href="#">S</a>
+                                </label>
+                            </li>
+                            <li class="checkbox">
+                                <input type="checkbox" name="checkbok4" id="checkbox4">
+                                <label for="checkbox4">
+                                    <a href="#">X</a>
+                                </label>
+                            </li>
+                            <li class="checkbox">
+                                <input type="checkbox" name="checkbok5" id="checkbox5">
+                                <label for="checkbox5">
+                                    <a href="#">XL</a>
+                                </label>
+                            </li>
+                            <li class="checkbox">
+                                <input type="checkbox" name="checkbok6" id="checkbox6">
+                                <label for="checkbox6">
+                                    <a href="#">XXL</a>
+                                </label>
+                            </li>
+                        </ul>
+                    </div><!-- /.widget-size -->
+
+
+                </div><!-- /.sidebar -->
+                <a href="@Url.Action("Index","Shop")" class="btn btn-danger">Reset Filters</a>
+
+            </div><!-- /.col-md-3 -->
+
+            <div class="col-md-9">
+          
+                <div id="productsDiv">
+                    @{
+                        var filterProductsViewModel = new ClothBazar.Web.ViewModels.FilteredProductsViewModel();
+                        filterProductsViewModel.Products = Model.Products;
+                        //for directly calling the partialView not Action we use RenderPartial() as we are
+                        //directly calling and that partial view requires a model "FilteredProductsViewModel"
+                        //so we need to also pass it here i.e the second parameter first is name of PartialView.
+                        filterProductsViewModel.myPager = Model.myPager;
+                        filterProductsViewModel.sortBy = Model.sortBy;
+                        filterProductsViewModel.categoryId = Model.categoryId;
+                        
+                        Html.RenderPartial("FilterProducts", filterProductsViewModel);
+                    }
+                </div>
+            </div><!-- /.col-md-9 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.flat-row -->
+
+@* creted two inputs that will hold minimumPrice and maximum price that is created by moving the the Price
+    Slider at any instance*@
+@*<input id="selectedMinimumPrice" type="hidden" />
+<input id="selectedMaximumPrice" type="hidden" />*@
+
+<script>
+
+    var callTimeout; 
+
+    var priceSlider = $("#slide-range").slider({
+        range: true,
+        min: 0,
+        max:@Model.MaximumPrice,
+        values: [0,@Model.MaximumPrice],
+        slide: function (event, ui) {
+            var minPrice = ui.values[0];
+            var maxPrice = ui.values[1];
+
+            $("#amount").val("$" + minPrice + ".00" + " - " + "$" + maxPrice + ".00");
+            //in this way on every slide this method will be called so in a second thousand of request will be
+            //going to Server and in case of many users on website at a time so these requestw will increase upto
+            //millons of request in sec for just filtering the product by price what is solution for it.
+            //       GetDataBySliderValue(minPrice, maxPrice);    //bad way
+
+            // so solution is to call  GetDataBySliderValue() after the user stops
+            // sliding or release the slider  we can we do this as
+            //we call "GetDataBySliderValue()" method after 1 or 2 seconds after users stops sliding or release slider
+            //in this  we may save 1000 of unnessary requests to Server.so we created 
+            //a variable above named "callTimeout" which we use to count time time 1 or 2 sec and then call the 
+            //method after 1 or 2 sec so we did this..
+            clearTimeout(callTimeout); // will clearTime() will set callTImeout=0 while user is sliding slider 
+            //and once released the timer will start from 0. 
+            callTimeout = setTimeout(GetDataBySliderValue, 1000);
+            //setTimeout() has two parameter first name of function to call and second after how much time call it
+            //so when the user release the slider after 1 sec GetDataBySliderValue() will be called
+            console.log("slided");  //display output in console of browser
+        }
+    });
+
+    function GetDataBySliderValue() {
+        showLoader();
+        
+        $.ajax({
+             url: '@Url.Action("FilterProducts", "Shop")',
+            data: {
+
+                //we passed data from input fields as the model value we require is in FilterProducts.cshtml
+                //we cannot pass the model data of this page as these are old values and we passed the initial
+                //values from here that will be always empty and there on the FilterProducts.cshtml on each instance
+                // a new ajax call is made so the new Model is passed only there not here so we will get those new
+                //values from there using input fields that we can access here.
+                searchTerm: $("#searchTerm").val(),
+                categoryId: $("#CategoryId").val(),
+                sortBy: $("#SortBy").val(),
+                //for multiple filters at a time on page e.g show product whose price 100-500 and category = men
+               //we pass here the categoryId that is currently selected on page so next time when load page it will be selected 
+                //as priceSlider is Global variable so can be accessed here so min and max values will be
+                // also accessible and can be accessed as
+                minimumPrice: priceSlider.slider("values",0), 
+                maximumPrice: priceSlider.slider("values", 1)
+             }
+         })
+        .done(function (response) {
+            $("#productsDiv").html(response);
+        })
+        .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Failed");
+        })
+        .always(function () {
+            hideLoader();
+        });
+    }
+
+    $(".dataLink").click(function () {
+        var url = $(this).attr("data-href");
+        if (url != "" || url != undefined) {
+            GetData(url);
+        }
+    });
+
+    function GetData(dUrl) {
+            showLoader();
+      
+        $.ajax({
+
+                url: dUrl,
+                data: {
+                    minimumPrice: priceSlider.slider("values", 0),
+                    maximumPrice: priceSlider.slider("values", 1)
+                }
+            })
+            .done(function (response) {
+                $("#productsDiv").html(response);
+            })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Failed");
+            })
+            .always(function () {
+               hideLoader();
+            });
+            
+    }
+</script>

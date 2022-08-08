@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@*we wanted to declare the input fields in create.cshtml as Required so we wrote this  <input name="Name" required /> but this will
+    not work as "required" works if we submit the form but as we are not submitting the form or we don,e have a button
+    that has type=submit i.e <button type="Submit >Save</button> but using the JS code to send the data of all input
+    fields to server i.e using the serialize() method so for the declaring any field Required we need to additionally
+    write it JSCode on the click of Save button and also we need to inherit JqueryValidationScriptFile in our project
+    for any file like this they are searched as " jquery validate cdn" and we download the link for the file here
+    https://cdnjs.com/libraries/jquery-validate and the online file link is
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js
+    this file needs internet as its online not in our project   ...*@
+
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>*@
+<script src="~/Scripts/jquery.validate.min.js"></script>
+
+
+@*and we used these links for help i.e how to use required and other using jquery for this we searched
+    "Jquery form validation or Jquery Validation " on google and get https://jqueryvalidation.org/validate/
+    https://stackoverflow.com/questions/15060292/a-simple-jquery-form-validation-script*@
+
+
+
+
+@* it is a way to call a view/partailView  on a specific part of any page/View we are calling here the
+    View using the ActionMethod Name ProductTable() in ProductControler rememer the action we passed here
+    must be returning a parialView OtherWise in case of normal View it may be linked to SharedView
+    so it will be returning whole view with its content and SharedView COntent
+    so to get only the ProductTable View Content not the sharredView we returned Partial View from the ProductTable() acion now*@
+
+@* we added this in the div as on Ajax Call in ProductTable.cshtml we call it self agin in JavaScript code
+    so an updated table of records according to the string user enter will be generated and passed in a partailView
+    which also contains SearchBar so we will see two searchBars and tables on page so to avoid this we
+    created a div here and in this we set the html passed by partial view which is same what it has
+    but that passed HTML will have Table according to searchedString and as we set that as html to this
+    div so the previous code or table/SearchBar will be overwritten or removed and new will be placed*@
+
+<section class="flat-row flat-iconbox">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title-section">
+                    <h2 class="title">
+                        Products
+                    </h2>
+                </div><!-- /.title-section -->
+            </div><!-- /.col-md-12 -->
+        </div>
+
+        <div id="tableContainer" style="padding-top: 15px">
+            @{
+                Html.RenderAction("ProductTable");
+            }
+        </div>
+
+        <hr />
+
+        @* in this Div by using JScript code we will pass here create()/Edit() Action PartialView so it will be here in this div  *@
+        <div id="actionContainer">
+
+        </div>
+    </div>
+</section>
+
+<script>
+
+    function focusAction(controlToFocus) {
+        $('html, body').animate({
+            //scrollTop: $("#actionContainer").offset().top - 100
+            scrollTop: $("#" + controlToFocus).offset().top - 100 // so now it will focus on any
+            //part/controler whose reference is passed to it
+        }, 1000);
+    }
+</script>

@@ -1,0 +1,387 @@
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ApplicationInsights.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ClothBazar.Web.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ClothBazar.Web.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ClothBazar.Web.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\csc.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\csc.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\csc.rsp
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\csi.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\csi.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\csi.rsp
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.AppContext.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Console.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.IO.Compression.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.IO.Pipes.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Security.Claims.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.ValueTuple.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Xml.XPath.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\vbc.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\vbc.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\vbc.rsp
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Antlr3.Runtime.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\EntityFramework.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AI.Web.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.ApplicationInsights.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Newtonsoft.Json.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Owin.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.Helpers.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.Mvc.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.Optimization.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.Razor.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.WebPages.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\WebGrease.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.Helpers.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.Mvc.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.Optimization.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.Razor.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.WebPages.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Newtonsoft.Json.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Antlr3.Runtime.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\EntityFramework.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.AI.Web.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\obj\Debug\ClothBazar.Web.csprojAssemblyReference.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\obj\Debug\ClothBazar.Web.csproj.CoreCompileInputs.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\obj\Debug\ClothBazar.Web.csproj.CopyComplete
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\obj\Debug\ClothBazar.Web.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\obj\Debug\ClothBazar.Web.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ClothBazar.Entities.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ClothBazar.Entities.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ClothBazar.Services.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ClothBazar.Database.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ClothBazar.Services.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ClothBazar.Services.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ClothBazar.Database.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Web\bin\ClothBazar.Database.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ApplicationInsights.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Web.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Web.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Web.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csc.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csc.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csc.rsp
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csi.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csi.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csi.rsp
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.AppContext.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Console.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.IO.Compression.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.IO.Pipes.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Claims.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.ValueTuple.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Xml.XPath.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\vbc.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\vbc.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\vbc.rsp
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Antlr3.Runtime.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Entities.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Services.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\EntityFramework.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.Web.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.ApplicationInsights.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Newtonsoft.Json.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Owin.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Helpers.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Mvc.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Optimization.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Razor.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\WebGrease.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Database.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Entities.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Services.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Services.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Helpers.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Mvc.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Optimization.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Razor.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Newtonsoft.Json.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Antlr3.Runtime.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\EntityFramework.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.Web.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Database.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Database.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.csprojAssemblyReference.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.csproj.CoreCompileInputs.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.csproj.CopyComplete
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ApplicationInsights.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Web.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Web.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Web.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csc.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csc.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csc.rsp
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csi.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csi.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\csi.rsp
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.AppContext.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Console.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.IO.Compression.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.IO.Pipes.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Claims.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.ValueTuple.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Xml.XPath.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\vbc.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\vbc.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\vbc.rsp
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Antlr3.Runtime.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Entities.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Services.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\EntityFramework.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.Web.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.ApplicationInsights.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Newtonsoft.Json.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Owin.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Helpers.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Mvc.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Optimization.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Razor.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\WebGrease.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Database.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Entities.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Services.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Services.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Helpers.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Mvc.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Optimization.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.Razor.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Newtonsoft.Json.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Antlr3.Runtime.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\EntityFramework.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.AI.Web.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Database.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\bin\ClothBazar.Database.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.csprojAssemblyReference.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.csproj.CoreCompileInputs.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.csproj.CopyComplete
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.Migrations.InitialCreate.resources
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.csproj.GenerateResource.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Web\obj\Debug\ClothBazar.Web.Migrations.AddedNameAddressToUser.resources

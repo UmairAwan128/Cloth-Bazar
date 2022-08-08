@@ -1,0 +1,129 @@
+﻿
+@model IEnumerable<ClothBazar.Web.ViewModels.myConfigModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="modal fade" id="mydialog" tabindex="-1" role="dialog" aria-labelledby="mydialog-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="mydialog-title">New Category</h4>
+            </div>
+            <div id="mydialog-body" class="modal-body"> </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="title-section">
+                <h2 class="title">
+                    Configurations
+                </h2>
+            </div><!-- /.title-section -->
+        </div><!-- /.col-md-12 -->
+    </div>
+
+
+    <button type="button" class="btn btn-primary" id="newBtn">Add New</button>
+    <br /><br />
+
+    <table id="CategoriesTable" class="table table-striped">
+
+        <thead>
+            <tr>
+                @* class="font-weight-bold" is not needed for now *@
+                <th class=" font-weight-bold">Key</th>
+                <th class=" font-weight-bold">Value</th>
+                <th class=" font-weight-bold">Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var m in Model)
+                {
+                    <tr class="dgdatarow" data-key="@m.Key">
+                        <td>@m.Key</td>
+                        <td>
+                            @m.Value
+                        </td>
+                        <td>
+                            <button class=" editBtn dgeditbtn">Edit</button>
+                            <button class=" deleteBtn dgdeletebtn">Delete</button>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr><td colspan="4" class="text-danger">No Configurations Found</td></tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $("#newBtn").click(function (event) {
+        event.preventDefault();
+        $.ajax(
+            {
+                url: "/myConfig/create"
+            }
+        ).done(function (result) {
+            $("#mydialog-title").html("New Configuration");
+            $("#mydialog-body").html(result);
+            $("#mydialog").modal();
+
+        });
+    });
+
+
+    $(".dgdeletebtn").click(function () {
+
+        var key = $(this).parents(".dgdatarow").data("key");
+        $.ajax(
+            {
+                url: "/myConfig/delete/",
+                   data: {
+                    key: key
+                },
+            }
+        ).done(function (result) {
+            $("#mydialog-title").html("Do you want to delete this record?");
+            $("#mydialog-body").html(result);
+            $("#mydialog").modal();
+        });
+    });
+
+
+    $(".dgeditbtn").click(function () {
+        debugger;
+        var key = $(this).parents(".dgdatarow").data("key");
+        $.ajax(
+            {
+                url: "/myConfig/edit/",
+
+                data: {
+                    key: key
+                },
+            }
+        ).done(function (result) {
+            debugger;
+
+            $("#mydialog-title").html("Edit Configuration");
+            $("#mydialog-body").html(result);
+            $("#mydialog").modal();
+        });
+    });
+
+</script>

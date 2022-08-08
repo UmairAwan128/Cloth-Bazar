@@ -1,0 +1,46 @@
+﻿@* For details about  List<Category>   check out the   ProductTable.cshtml View *@
+
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/jquery.validate.min.js"></script>
+
+@* categories *@
+
+<section class="flat-row flat-iconbox">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title-section">
+                    <h2 class="title">
+                        Categories
+                    </h2>
+                </div><!-- /.title-section -->
+            </div><!-- /.col-md-12 -->
+        </div>
+
+
+        <div id="tableContainer" style="padding-top: 15px">
+            @{
+                Html.RenderAction("CategoriesTable");
+            }
+        </div>
+
+        <hr />
+
+        @* in this Div by using JScript code we will pass here create()/Edit() Action PartialView so it will be here in this div  *@
+        <div id="actionContainer">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    function focusAction(controlToFocus) {
+        $('html, body').animate({
+            //scrollTop: $("#actionContainer").offset().top - 100
+            scrollTop: $("#" + controlToFocus).offset().top - 100 // so now it will focus on any
+            //part/controler whose reference is passed to it
+        }, 1000);
+    }
+</script>

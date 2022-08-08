@@ -1,0 +1,180 @@
+﻿@model  ClothBazar.Web.ViewModels.CategoriesSearchViewModel
+
+@{
+    ViewBag.Title = "CategoriesTable";
+}
+
+@* These two files ref are added here so that on our"CategoriesTable below Pagination will be applied also we need to assign
+    id to that table and some JS code below in <Script> tag i.e  just this on ready of the page     $('#myTable').DataTable(); *@
+
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+
+<form method="post">
+
+    <div class="row ">
+        <div class="col-md-9  form-group">
+            <input name="Search" id="searchTxt" class="form-control" placeholder="Enter something" value="@Model.searchTerm">
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
+            <button type="button" class="btn btn-primary" id="resetBtn">Reset</button>
+            <button type="button" class="btn btn-primary" id="newBtn">New</button>
+        </div>
+    </div>
+</form>
+
+<div>
+    <table id="CategoriesTable" class="table table-striped">
+
+        <thead>
+            <tr>
+                @* class="font-weight-bold" is not needed for now *@
+                <th class="font-weight-bold">Category Name</th>
+                <th class="font-weight-bold">Products</th>
+                <th class="font-weight-bold">Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (Model.categories != null && Model.categories.Count > 0)
+            {
+                foreach (var category in Model.categories)
+                {
+                    <tr>
+                        <td>@category.Name</td>
+                        <td>
+                            @* Here we get no of products this Category has  *@
+                            @ProductsService.Instance.GetProductsCount(category.Id)
+                        </td>
+                        <td>
+                            <button class="editBtn" data-Id="@category.Id">Edit</button>
+                            <button class="deleteBtn" data-Id="@category.Id">Delete</button>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr><td colspan="4" class="text-danger">No Categories Found</td></tr>
+            }
+        </tbody>
+    </table>
+</div>
+@* we included two files ref added on top of page so that on our"CategoriesTable below Pagination will be applied also we need to assign
+    id to that table and some JS code below here i.e  just this on ready of the page     $('#myTable').DataTable();  and pagination is
+        applied but drawback is even this is not the true pagination as all records are loaded from DB even now not a few so slow startUp
+        will be faced when we have 10000 of records for minimizingg this problem we need to add some code on controler even create a seperate
+        class and various servives which is explained in this Link   https://www.c-sharpcorner.com/article/using-datatables-grid-with-asp-net-mvc/*@
+
+<script>
+
+    $(document).ready(function () {
+        $('#CategoriesTable').DataTable();
+    });
+
+    $("#searchBtn").click(function () {
+          var searchValue = $("#searchTxt").val();
+        $.ajax(
+            {
+            @*URL Helper: (@URL("ActionName","ControlerName")) Some Websites have Coustomized URL for aceesing various parts of Site
+            right now our default convention is "/ControlerName/ActionName" we can change them also this may be benificial in SEO
+            in our site if we need to access any action/view we are now writting there path hardcoded as in case of Ajax req in JS code
+            we write   url: '/ContrlerName/ActionName'  also we need to remember its syntax so for ease we can write the same thing as*@
+                url: '@Url.Action("CategoriesTable", "Category")',
+                //bothSame   //previously written      '/Category/CategoriesTable'
+                //and now as we can see to access CategoriesTable in browser we will write link as localhost/Category/CategoriesTable
+                //but we want to access this View with another Name OR even Link means the Coustomized URL as the client may demand
+                //that i don,t like this  URL  /Category/CategoriesTable as it does not help well in SEO but it shoul be  /Categories/all
+                //so for this one way is to change the name of actions and contoler even and where they are called also and the
+                //other easy way is this we need to Map a new Route in RouteConfig.cs i.e in App_Start folder which we did there
+                data: {
+                  search: searchValue
+                }
+            })
+            .done(function (data) {
+                $("#tableContainer").html(data);
+            })
+             .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+              alert("Failed");
+             });
+    });
+
+    $("#resetBtn").click(function () {
+          var searchValue = '';
+        $.ajax(
+            {
+                url: '@Url.Action("CategoriesTable", "Category")',
+                data: {
+                  search: searchValue
+                }
+            })
+            .done(function (data) {
+                $("#tableContainer").html(data);
+            })
+             .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+              alert("Failed");
+             });
+    });
+
+    $("#newBtn").click(function () {
+        var searchValue = $("#searchTxt").val();
+
+        $.ajax({
+            //its URLHelper its detail is above on SearchBtn click function of JS
+            url: '@Url.Action("Create","Category")',   //"/Category/Create"
+        })
+        .done(function (data) {
+                $("#actionContainer").html(data);
+                focusAction("actionContainer");  //this method is in the index.cshtml as this code was common so there
+             //we passed it name of the Container/Div to focus that
+        })
+        .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Failed");
+        });
+    });
+
+    $(".editBtn").click(function () {
+
+        $.ajax({
+                  //its URLHelper its detail is above on SearchBtn click function of JS
+            url: '@Url.Action("Edit","Category")', //"/Category/Edit",
+            data: {
+                Id: $(this).attr('data-Id')
+            }
+        })
+         .done(function (data) {
+                $("#actionContainer").html(data);
+             focusAction("actionContainer");  //this method is in the index.cshtml as this code was common so there
+             //we passed it name of the Container/Div to focus that
+            })
+         .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Failed");
+         });
+    });
+
+    $(".deleteBtn").click(function () {
+        var confirmDelete = confirm("Are you sure you want to delete this Category?")
+
+        if (confirmDelete) {
+            $.ajax({
+                type: "Post",
+                url: '@Url.Action("Delete","Category")',  //"/Category/Delete"
+                data: {
+                    Id: $(this).attr('data-Id')
+                }
+            })
+            .done(function (data) {
+                    $("#tableContainer").html(data);
+            })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Failed");
+            });
+        }
+    });
+
+
+</script>
+
+

@@ -1,0 +1,182 @@
+﻿@* For details about  @model  Category   check out the   ProductTable.cshtml View *@
+@model  Category
+@{
+    ViewBag.Title = "Edit";
+    //trueChecked will have checked if isFeatured==true else it will have null
+    var trueChecked = Model.isFeatured ? "checked" : string.Empty;
+    var falseChecked = !(Model.isFeatured) ? "checked" : string.Empty;
+    var imageURL = !string.IsNullOrEmpty(Model.ImageURL) ? Model.ImageURL : "/Content/images/system/placeholder.png";
+}
+
+<h2>Edit Category</h2>
+
+<form method="post" id="editCategory">
+
+    <input type="hidden" name="Id" value="@Model.Id" />
+    
+    <div class="row">
+        <div class="col-md-8">
+
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" name="Name" value="@Model.Name" />
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <input class="form-control" name="Description" value="@Model.Description" />
+            </div>
+
+            <div class="form-group">
+                <label>Image</label>
+                <input class="form-control" id="imageUpload" name="Image" type="file" accept=".png, .jpg" />
+            </div>
+            <input id="ImageURL" name="ImageURL" type="hidden" value="@imageURL" />
+
+            <div class="form-group">
+                <label>Is Featured?</label>
+                <div class="input-group">
+                    <div class="form-control radio">
+                        <label><input name="isFeatured" type="radio" value="True" @trueChecked />True</label>
+                    </div>
+                    <div class="form-control radio">
+                        <label><input name="isFeatured" type="radio" value="False" @falseChecked />False</label>
+                    </div>
+
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="updateBtn">Update</button>
+            <button type="button" class="btn btn-primary" id="cancelBtn">Cancel</button>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group thumb">
+                <img src="@imageURL" class="img-thumbnail img-fluid form-control" id="categoryImage" />
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+<script>
+
+    //for details see the Create.cshtml of the Product this same part
+    $("#editCategory").validate({
+        rules: {//here we define the rules against "Name" Property of the input fields so for e.g
+            //< input class= "form-control" name="Name" /> we  define it rules as
+            Name: {
+                // email:true,  //can be used for email verification
+                required: true,
+                minlength: 5,
+                maxlength: 50
+                //For other special types like CNIC has specific format 000-0000-000  so for this we use RegularExpression 
+                //on google we can find regular expression of which we required we have some RegularExpression creator/tester sites
+            },
+            Description: {
+                maxlength: 500
+            }
+        },
+        messages: {//here we write error messages that will be shown against that properties if they are not fullfilled
+            Name: {
+                required: 'Name is Rquired',   //if Name field is left empty show this
+                minlength: 'Minimum length is 5', //if Name value get greater then 5 show this
+                maxlength: 'Maximum length is 50'
+            },
+            Description: {
+                maxlength: 'Maximum length is 500'
+            }
+        }
+    });
+
+
+    $("#cancelBtn").click(function () {
+        $("#actionContainer").html("");// this will move null in actionContainer Div in whihc we placed the CreateForm so this null will be overwrittrn and
+        //create form will be removed
+        focusAction("tableContainer");  //this method is in the index.cshtml as this code was common so there
+                //we passed it name of the Container/Div to focus that
+    });
+
+
+    $("#updateBtn").click(function () {
+        if ($("#editCategory").valid()) { //this checks if the form is valid according to JSCode we write in ("#createProduct").Validate(){}
+
+            $.ajax({
+                type: "Post",
+                //its URLHelper its detail is int CategoriesTable.cshtml on SearchBtn click function in JS<script> code 
+                url: '@Url.Action("Edit", "Category")',
+                //url: "/Category/Edit",
+                data: $("#editCategory").serialize()
+            })
+                .done(function (data) {
+                    $("#tableContainer").html(data);
+                    $("#actionContainer").html("");
+                    focusAction("tableContainer");  //this method is in the index.cshtml as this code was common so there
+                    //we passed it name of the Container/Div to focus that
+                })
+                .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    swal({
+                        title: "Warning",
+                        text: "Please enter all required fields.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                 });
+        }
+        else {
+            swal({
+                title: "JS Conditions Warning",
+                text: "Please fill all fields according to requirment",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+        }
+    });
+
+    
+    $("#imageUpload").change(function () {
+        var element = this; //as this so element will have the reference of the element(Image) on which this function is applied
+
+        var formData = new FormData(); //created here a new FormData obj as its accessible on server and also when we submitForm 
+        //VisualStudio creates object of FormData and using that we can also access all the Values but as here we want before Submitting
+        //so we created here object own our own to send Data to Server..
+
+        //totalFiles will have the totalNumber of files user have selected i.e User uploaded how many files/Images here he will upload
+        //only one so this code is for both if single file uploaded or multiple files..
+        var totalFiles = element.files.length;
+
+        //here adding the files that user uploaded into FormData
+        for (var i = 0; i < totalFiles; i++) {
+            var file = element.files[i]; //first get the file
+            formData.append("Photo", file); //then add to formData
+        }
+
+        //now send the formData obj to the UploadImage() of SharedController
+        $.ajax({
+            type: "Post",
+            //its URLHelper its detail is int CategoriesTable.cshtml on SearchBtn click function in JS<script> code 
+            url: '@Url.Action("UploadImage", "Shared")',
+            //url: "/Shared/UploadImage",
+            data: formData,
+            dataType: 'json', //tell the type and other things
+            contentType: false,
+            processData: false
+        })
+            .done(function (response) { //UploadImage() Action will return an annonymous obj in the form of Json in that object we are getting two things 
+                //1. we will get ImageURL i.e Path of Image in Server and 
+                //2. the Value of "Success(type:bool)" i.e either the the Image is saved or Not
+                //debugger; //means when the control comes here program Pauses like Breakpoint
+                //console.log(response);  //to show the value of response in the Console of the browser
+                if (response.Success == true) {
+                    $("#categoryImage").attr("src", response.ImageURL) //assign the Url to <img> tag above to show
+                    $("#ImageURL").val(response.ImageURL) //also assign the ImageURL/Path to the <input id="ImageURL"> so we can store it in DB
+                }
+            })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Failed");
+            });
+    });
+
+</script>

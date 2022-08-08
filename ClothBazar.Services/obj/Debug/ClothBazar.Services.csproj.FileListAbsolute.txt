@@ -1,0 +1,51 @@
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\ClothBazar.Services.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\ClothBazar.Services.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\ClothBazar.Services.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\ClothBazar.Database.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\ClothBazar.Entities.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\EntityFramework.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\ClothBazar.Database.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\ClothBazar.Database.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\ClothBazar.Entities.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\EntityFramework.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\obj\Debug\ClothBazar.Services.csprojAssemblyReference.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\obj\Debug\ClothBazar.Services.csproj.CoreCompileInputs.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\obj\Debug\ClothBazar.Services.csproj.CopyComplete
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\obj\Debug\ClothBazar.Services.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar\ClothBazar.Services\obj\Debug\ClothBazar.Services.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Services.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Services.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Services.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Database.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Entities.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\EntityFramework.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Database.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Database.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Entities.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\EntityFramework.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\obj\Debug\ClothBazar.Services.csprojAssemblyReference.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\obj\Debug\ClothBazar.Services.csproj.CoreCompileInputs.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\obj\Debug\ClothBazar.Services.csproj.CopyComplete
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\obj\Debug\ClothBazar.Services.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\ClothBazar - withDesign\ClothBazar.Services\obj\Debug\ClothBazar.Services.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\obj\Debug\ClothBazar.Services.csprojAssemblyReference.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\obj\Debug\ClothBazar.Services.csproj.CoreCompileInputs.cache
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\obj\Debug\ClothBazar.Services.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\obj\Debug\ClothBazar.Services.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Services.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Services.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Services.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Database.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Entities.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\EntityFramework.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Database.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Database.dll.config
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\ClothBazar.Entities.pdb
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\EntityFramework.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\umair awan\Documents\Visual Studio 2017\Projects\2.ClothBazar - withDesign\ClothBazar.Services\obj\Debug\ClothBazar.Services.csproj.CopyComplete

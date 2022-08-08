@@ -1,0 +1,136 @@
+﻿@model ClothBazar.Web.ViewModels.OrderDetailsViewModel
+@* as the View will be shown even user didn,t added a product in Cart or bought so check null *@
+@{
+    decimal totalBill = 0;
+    var productQuantity = 0;
+}
+
+@if (Model != null && Model.Order != null)
+{
+    var i = 0;
+    <section class="flat-row main-shop shop-slidebar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Your cart</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        @foreach (var orderItem in Model.Order.OrderItems)
+                        {
+
+                       
+                            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                <div>
+                                    <h6 class="my-0"> @(++i) - @orderItem.product.Name - Qty: @orderItem.Quantity </h6>
+                                    <small class="text-muted">
+                                        @* as we can have description upto 500 length so we
+                                            to limit its length upto 100 character we get substring if length<100 show complete description*@
+                                        @(orderItem.product.Description.Length > 100 ? orderItem.product.Description.Substring(0, 99) : orderItem.product.Description)
+                                    </small>
+                                </div>
+                                <span class="text-muted">
+                                    Unit Price: $@orderItem.product.Price x @orderItem.Quantity -
+                                    Total Price: $@(orderItem.product.Price * orderItem.Quantity)
+                                </span>
+                            </li>
+
+                        }
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total (USD)</span>
+                            <strong>$@Model.Order.TotalAmount</strong>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Billing address</h4>
+                    <form class="needs-validation" novalidate="">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="Name">Full Name</label>
+                                <input type="text" class="form-control" id="Name" placeholder="Enter Name" value="@Model.OrderedBy.Name" required="">
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="Email">Email <span class="text-muted">(Optional)</span></label>
+                            <input type="email" class="form-control" id="Email" placeholder="you@example.com" value="@Model.OrderedBy.Email">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="" value="@Model.OrderedBy.Address">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="status">Status</label>
+                            @* the form has no submit button we hadled a change event on this <Select> 
+                                i.e if value chang submit form and update satatus of the order*@
+                            <select name="status" id="changedStatus" class="form-control" >
+
+                                @foreach (var status in Model.allOrderStatus) {
+                                    bool selectedStatus = (status == Model.Order.Status);
+
+                                    <option @( selectedStatus ? "selected" : string.Empty ) >@status</option>
+                                }
+                            </select>  
+                        </div>
+                   </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+   
+    <script>
+
+        $("#changedStatus").change(function () {
+
+           $.ajax({
+
+                url: '@Url.Action("ChangeStatus", "Orders")',
+                data: {
+                    status:  $("#changedStatus").val(), 
+                    Id: '@Model.Order.Id' 
+                }
+           })
+               .done(function (Response) {
+                   if (Response.Success) {
+                       swal("Success!", "Order Status Updated.", "success");
+                
+                   }
+                   else {
+                       swal("Failed!", "Order Status failed to change", "warning");
+                
+                   }
+             })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Failed");
+            });
+
+        });
+
+    </script>
+
+}
+else
+{
+    //error
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrap-error text-center">
+                <div class="header-error">
+                    Oops,
+                </div>
+                <div class="content-error">
+                    <h2>Invalid Order</h2>
+                    <p>It looks like that Order didn,t found for Id you provided, click <a href="@Url.Action("Index","Shop")" class="btn-error">here</a> to go to Shop</p>
+                </div>
+            </div><!-- /.wrap-error -->
+        </div><!-- /.col-md-12 -->
+    </div>
+}
+
+

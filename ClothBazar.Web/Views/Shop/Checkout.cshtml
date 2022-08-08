@@ -1,0 +1,145 @@
+﻿@model ClothBazar.Web.ViewModels.CheckoutViewModel
+@* as the View will be shown even user didn,t added a product in Cart or bought so check null *@
+@{
+    decimal totalBill = 0;
+    var productQuantity = 0;
+}
+
+@if (Model != null && Model.CartProducts != null && Model.CartProducts.Count > 0)
+{
+    var i = 0;
+    <section class="flat-row main-shop shop-slidebar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Your cart</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        @foreach (var product in Model.CartProducts)
+                        {
+
+                            //CartProductIDs have list of all IDs user wants to buy we use it to count quantity of each product so
+                            //first from the List CartProductIDs we applied condition to select specific or same productId using where then we counted them
+                            // so Where(cartProductId => cartProductId == product.Id) in this case from CartProductIDs pick first Id and place it
+                            // in cartProductId then compare it with product.Id i.e the current product in loop then select the 2nd cartProductId
+                            //from CartProductIDs and compare it with the product.Id and soon till we compare each id in CartProductIDs with current product.Id
+                            //and at last we count the quantity
+                            productQuantity = Model.CartProductIDs.Where(cartProductId => cartProductId == product.Id).Count();
+                            totalBill = totalBill + (product.Price * productQuantity);
+
+                            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                <div>
+                                    <h6 class="my-0"> @(++i) - @product.Name - Qty: @productQuantity </h6>
+                                    <small class="text-muted">
+                                        @* as we can have description upto 500 length so we
+                                            to limit its length upto 100 character we get substring if length<100 show complete description*@
+                                        @(product.Description.Length > 100 ? product.Description.Substring(0, 99) : product.Description)
+                                    </small>
+                                </div>
+                                <span class="text-muted">
+                                    Unit Price: $@product.Price x @productQuantity -
+                                    Total Price: $@(product.Price * productQuantity)
+                                </span>
+                            </li>
+
+                        }
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total (USD)</span>
+                            <strong>simple: $@totalBill</strong>
+                            <strong>Linq: $@Model.CartProducts.Sum(cartProduct => cartProduct.Price * Model.CartProductIDs.Where(cartProductId => cartProductId == cartProduct.Id).Count())</strong>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Billing address</h4>
+                    <form class="needs-validation" novalidate="">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="Name">Full Name</label>
+                                <input type="text" class="form-control" id="Name" placeholder="Enter Name" value="@Model.User.Name" required="">
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="Email">Email <span class="text-muted">(Optional)</span></label>
+                            <input type="email" class="form-control" id="Email" placeholder="you@example.com" value="@Model.User.Email">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="" value="@Model.User.Address">
+                        </div>
+
+                        <hr class="mb-4">
+                        <button id="placeOrderBtn" class="btn btn-primary btn-lg btn-block" type="button">Place Order!</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    // the script tag is also inside the If{ } as first the function inside it requires the a value
+    // from the Model i.e CartProductsId as parameter if we place this script outside if{} then if its Model
+    // is empty an error will occur as model is empty and also button will be not found also as model empty
+    // so else will only run and no script will be writen also so no error
+    <script>
+
+    $("#placeOrderBtn").click(function () {
+
+        $.ajax({
+
+            url: '@Url.Action("PlaceOrder", "Shop")',
+            data: {
+                OrderproductIds : '@string.Join("-", Model.CartProductIDs)'
+           }
+        })
+        .done(function (response) {
+
+            if (response.Success == true) {
+
+                $.cookie('CartProducts','', { path: '/' }); //as order placed so empty the Cookie
+                updateCartProducts(); //also update the count to 0 on cart icon top right corner by calling
+                //this after emptying the cookie first as this method reads cookie data to get count.
+                swal("Success!", "Your Order has been Placed.", "success").then( (value)=>{
+                    window.location = '@Url.Action("Index","Home")'
+                });
+                
+
+            }
+            else {
+                swal("Failed!", "An error occurred while placing your Order.", "warning");
+            }
+
+        })
+        .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+            swal("Failed!", "An error occurred while placing your Order.", "warning");
+        });
+    });
+
+    </script>
+
+
+}
+else
+{
+    //error
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrap-error text-center">
+                <div class="header-error">
+                    Oops,
+                </div>
+                <div class="content-error">
+                    <h2>No Products in Your Cart</h2>
+                    <p>It looks like that you didn,t added any product in cart click <a href="@Url.Action("Index","Shop")" class="btn-error">here</a> to go to Shop and Add some Products</p>
+                </div>
+            </div><!-- /.wrap-error -->
+        </div><!-- /.col-md-12 -->
+    </div>
+}
+

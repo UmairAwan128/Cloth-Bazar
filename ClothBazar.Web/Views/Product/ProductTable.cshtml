@@ -1,0 +1,341 @@
+﻿@* we are here referencing the Product Entity as @model List<ClothBazar.Entities.Product>
+    but to avoid such long line in all files we can write/include
+    this refernce in <namspaces> tag of the Web.config file in the Views folder
+    so that in all view can directly access the Entities with
+    with their Name only as below check the Web.Config File for prcedure/Error*@
+@*@model List<ClothBazar.Entities.Product>*@
+@model  ClothBazar.Web.ViewModels.ProductSearchViewModel
+
+@{
+    ViewBag.Title = "ProductTable";
+}
+
+@*Razor Engine:
+  any code written in this way or using html helper e.g   @Model.Name or @if (), @for() {}  i.e c# code either written under
+  Html or Javascript code all such code executes on server side and server converts such code to pure html/JS using Razor Engine
+  which Microsoft Uses and then this pure html/JS code is sent to the client side  so on client side we have pure Html/JS code*@
+
+
+<form method="post">
+
+    <div class="row ">
+        <div class="col-md-9  form-group">
+
+            @* bydefault in the form button type is Submit i.e on the click of this button submit the form
+                to a post action in related controller and reloadPage/openAnotherPage and if controller
+                doesnot have any related action error shows but we want that when user enter some thimg in textbox
+                and press SearchButton the the page does not reload but a part of it i.e Table on it changes or
+                retrieve records from DB according to the searched String so we changed its type=Button
+                so now it will do nothing and we will write JScript code for this to tell what it will do...*@
+            <input name="Search" id="searchTxt" class="form-control" placeholder="Enter something" value="@Model.searchTerm">
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
+            <button type="button" class="btn btn-primary" id="resetBtn">Reset</button>
+            <button type="button" class="btn btn-primary" id="newBtn">New</button>
+        </div>
+
+
+    </div>
+</form>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="font-weight-bold">ProductName</th>
+                <th class="font-weight-bold">Category</th>
+                <th class="font-weight-bold">Price</th>
+                <th class="font-weight-bold">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.products != null && Model.products.Count > 0)
+            {
+                foreach (var product in Model.products)
+                {
+                    <tr>
+                        <td>@product.Name</td>
+                        @*1. We are not getting here category data i.e we want to show the categoryName here but for each product we are
+                            getting the category=null this is happening because while we are getting products from Product Table using
+                            GetProduct() method in ProductService class we are not telling it to also get all Category data of the
+                            related product we tell this using    include("theNameOfTable") i.e Eager Loading for this also we need
+                            to write Virtual keyword with the Category attribute in Product Entity Class and for better performance
+                            inherit the CBContext from IDisposable so that the Context class object will be disposed once after its
+                            used or has accessed the Data from DB *@
+                        <td>
+                            @if (product.Category != null)
+                            {
+                                <text> @product.Category.Name  </text>
+                            }
+                            else
+                            {
+                                <text> -- </text>
+                            }
+                            @*2. after doing all above in 1 now we are accessing the category against the Product in tablebut now a new
+                                problem enters that when we create a new product the selected category for this also gets entered as a new
+                                entry/record to Category table so next time when we create new product the previously used/selected Category
+                                will be appearing twice in the dropdown as new category is created each time we create a new product so overcome
+                                this we need to tell to entity framework that when we create product don,t create new category/ don,t make
+                                changes to category table we do this by telling the State for the category Table as Unchanged we did this
+                                in SaveProduct() method of ProductService.cs class*@
+                        </td>
+
+                        <td>@product.Price</td>
+                        <td class="wrap-td">
+                            @* we want to perform Edit operation on the click of this button we can assign it
+                                Id but as there may be many products so many Edit buttons as its in Loop so Id
+                                will be same for all the Buttons but Id can,t be same so we will assign it a class
+                                which can be same it can have anyName or use builtIn, that we use to idenify EditButtons on this Page so*@
+                            <button class="editBtn" data-Id="@product.Id">Edit</button>
+                            @* data-Id  is our own created name and it will be used to uniquely identify
+                                each edit button as we are assigning it Id of the product so now we can
+                                identify which Editbutton is clicked*@
+                            <button class="deleteBtn" data-Id="@product.Id">Delete</button>
+                            <button class="addToCart" data-Id="@product.Id">Add to Cart</button>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr><td colspan="4" class="text-danger">No Products Found</td></tr>
+            }
+
+        </tbody>
+    </table>
+
+    @* revious and next page buttons *@
+    @*<div>*@
+    @* class="PageNavigationButton" is our own name *@
+
+    @*@if (Model.PageNo != 1)
+            {  //if PageNo is not equal to 1 then create button or if PageNo is 1 then skip button creation
+                <button class="PageNavigationButton" data-pageNo="@( Model.PageNo - 1 )">Previous</button>
+            }
+
+            <button class="PageNavigationButton" data-pageNo="@( Model.PageNo + 1 )">Next</button>
+        </div>*@
+
+
+    <div>
+
+        @if (Model.pager != null && Model.pager.TotalPages>1)  //Model.pager.TotalPages>1 means if only one page don,t show pagination
+        { //if pagger object is passed then we need to appply pagination
+
+            if (Model.pager.CurrentPage > 1)  //then show previous and First Button otherwise
+            {//don,t show them or they will be hiddent if we are on first page
+                <button class="PageNavigationButton" data-pageNo="1">First</button>
+                <button class="PageNavigationButton" data-pageNo="@( Model.pager.CurrentPage - 1 )">Previous</button>
+            }
+
+            for (int page = Model.pager.StartPage; page <= Model.pager.EndPage; page++)
+            { //page will have the pageNo int and Endpage will have the pageNo of the Last Page
+                string activeClass = Model.pager.CurrentPage == page ? "active bg-info" : string.Empty;
+                <button class=" @activeClass PageNavigationButton" data-pageNo="@page">@page</button>
+            }
+
+            if (Model.pager.CurrentPage < Model.pager.TotalPages)//then show Last and Next Button otherwise
+            {//don,t show them or they will be hiddent if last page
+                <button class="PageNavigationButton" data-pageNo="@( Model.pager.CurrentPage + 1 )">Next</button>
+                <button class="PageNavigationButton" data-pageNo="@( Model.pager.EndPage )">Last</button>
+            }
+
+        }
+    </div>
+
+</div>
+
+
+<script>
+
+    $("#searchBtn").click(function () {
+        var searchValue = $("#searchTxt").val();
+        //now we want to send this value to the ProductTable() action in ProductControler and we want to do this
+        //with AJAX i.e without reloading the page so the Sytax for the most common Ajax calls is
+
+        $.ajax({
+            //type="Get",     //this the request type i.e Get or call the Get Method byDefault its Get
+            //its URLHelper its detail is int CategoriesTable.cshtml on SearchBtn click function in JS<script> code
+            url: '@Url.Action("ProductTable", "Product")',
+             //url: "/Product/ProductTable",        //here we enter location/path of action to call as type=Get so Get Action will be called in case of two methods
+            data: { //if any parameter that action requires we passed them in here as ProductTable() requires string named "search"
+                search: searchValue    //for search parameter of the ProductTable() action we passed searchValue
+            }
+        })//so Ajax request sent
+            .done(function (data) { //on the completion of the Ajax Request after the Action Called completly executes the controls comes to done()
+                //alert(data); //the data will be from the Action we called here ProductTable() Action returns PartailView of table so its html will be in data
+                $("#tableContainer").html(data); //so we set that html to the div having id=tableContianer
+            })//if Ajax request fail for any of the reason this fail() will execute
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Failed");
+            });
+    });
+
+    $("#resetBtn").click(function () {
+        var searchValue = '';
+        //now we want to send this value to the ProductTable() action in ProductControler and we want to do this
+        //with AJAX i.e without reloading the page so the Sytax for the most common Ajax calls is
+
+        $.ajax({
+            //type="Get",     //this the request type i.e Get or call the Get Method byDefault its Get
+              //its URLHelper its detail is int CategoriesTable.cshtml on SearchBtn click function in JS<script> code
+            url: '@Url.Action("ProductTable", "Product")',
+            //  url: "/Product/ProductTable",        //here we enter location/path of action to call as type=Get so Get Action will be called in case of two methods
+            data: { //if any parameter that action requires we passed them in here as ProductTable() requires string named "search"
+                search: searchValue    //for search parameter of the ProductTable() action we passed searchValue
+            }
+        })//so Ajax request sent
+            .done(function (data) { //on the completion of the Ajax Request after the Action Called completly executes the controls comes to done()
+                //alert(data); //the data will be from the Action we called here ProductTable() Action returns PartailView of table so its html will be in data
+                $("#tableContainer").html(data); //so we set that html to the div having id=tableContianer
+            })//if Ajax request fail for any of the reason this fail() will execute
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Failed");
+            });
+    });
+
+    $(".PageNavigationButton").click(function () {
+
+        $.ajax({
+
+           //its URLHelper its detail is int CategoriesTable.cshtml on SearchBtn click function in JS<script> code
+           url: '@Url.Action("ProductTable", "Product")',
+            data: {
+                search:  '@Model.searchTerm', //or can be $("#searchTxt").val() but bad option as it picks anything written in Textbox even search not performed
+              pageNo: $(this).attr("data-pageNo")   //passing the PageNo so that specific records according to pageNo will be retrieved
+           }
+       })
+        .done(function (data) {
+            $("#tableContainer").html(data);
+        })
+        .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("Failed");
+        });
+    });
+
+    $("#newBtn").click(function () {
+                var searchValue = $("#searchTxt").val();
+
+        $.ajax({
+                    //its URLHelper its detail is int CategoriesTable.cshtml on SearchBtn click function in JS<script> code
+                    url: '@Url.Action("Create", "Product")',
+        })
+            .done(function (data) {
+                $("#actionContainer").html(data);
+                    focusAction("actionContainer");  //this method is in the index.cshtml as this code was common so there
+                                                     //we passed it name of the Container/Div to focus that
+
+                })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Failed");
+                });
+            });
+
+
+    $(".editBtn").click(function () {
+
+        //debugger;        //its like a breakPoint in JS when the browser reach this line it will stop
+        //we can use it to test code i.e like this command    $(this).attr('data-Id')  by writting
+        //them in Console of Browser when this debugger is reached and benifit is we get output instantly
+        //e.g u can write them as first write "$(this)" it will return u the ref of the button clicked
+        //then for "$(this).attr('data-Id')" it will show you the data inside this attribute i.e Id
+        $.ajax({
+                    //its URLHelper its detail is int CategoriesTable.cshtml on SearchBtn click function in JS<script> code
+                    url: '@Url.Action("Edit", "Product")',
+            //Edit() Action requires Id as a parameter so how can we find which editButton is clicked
+            data: {
+                        //"$(this)" it will return u the ref of the button clicked which has class .editBtn
+                        //then for "$(this).attr('data-Id')" it will show you the data inside this attribute i.e Id
+                        Id: $(this).attr('data-Id')
+            }
+                })
+            .done(function (data) {
+                $("#actionContainer").html(data);
+                    focusAction("actionContainer");  //this method is in the index.cshtml as this code was common so there
+                                                     //we passed it name of the Container/Div to focus that
+                })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Failed");
+                });
+            });
+
+    $(".deleteBtn").click(function () {
+                //using here the builtIn Confirm() method it will show an Alert on the click of any delete
+                //button and if user presses Ok then we get here true and if Cancel then false will be returned
+
+                //var confirmDelete = confirm("Are you sure you want to delete this product?")
+
+                //if (confirmDelete) {
+                //    $.ajax({
+                //        type: "Post",
+                //        url: "/Product/Delete",
+                //        data: {
+                //            Id: $(this).attr('data-Id')
+                //        }
+                //    })
+                //        .done(function (data) {
+                //            $("#tableContainer").html(data);
+                //        })
+                //        .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                //            alert("Failed");
+                //        });
+
+                //}
+
+
+                //swal  means sweet alert for this we incuded a seperate JS file
+                swal({
+                    title: "Confirm?",
+            text: "Are You sure you want to delete this Product? ",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                 if (willDelete) { //if willDelete==true
+                    $.ajax({
+                         type: "Post",
+                          //its URLHelper its detail is int CategoriesTable.cshtml on SearchBtn click function in JS<script> code
+                        url: '@Url.Action("Delete", "Product")',
+                        data: {
+                             Id: $(this).attr('data-Id')
+                        }
+                     })
+                        .done(function (data) {
+                            $("#tableContainer").html(data);
+                    //swal()  means sweet alert for this we incuded a seperate JS file
+                    swal("The Product has been deleted successfully.", {
+                        icon: "success",
+                            });
+                })
+                        .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Failed");
+                });
+
+            }
+
+        });
+
+    });
+
+
+    var allCartProducts = []; //created a Products array this will be having all the procucts adds to cart
+    $(".addToCart").click(function () {
+        //first get the Id of the Product User Wants to Buy
+        var productId = $(this).attr('data-Id');
+        //then add this productId in allCartProducts Array/List using push
+        allCartProducts.push(productId);
+        //then we created a cookie named "CartProducts" and this cookie will holding the all productId's in allCartProducts which user want to buy
+        //{ path: '/' }  means that only / means this cookie will be accessible in whole Site pages
+        $.cookie("CartProducts", allCartProducts.join('-'), { path: '/' }); // but in browser when we see the cookie data after addind some products to cart
+        //we get  data/Content : 22%2C23%2C24  as allCartProducts is an array of strings so each element will be string so in case of
+        //array data we can see it in Console by just writting the array Name there we get  ["22", "23", "24"] this means cookie represent
+        // ',' as %2c either now we use it use something else which can be recognised e.g '-' so for this first we can use join()
+        // to convert this array to a single string i.e allCartProducts.Join() will return "22,23,24" and if allCartProducts.Join('-') then "22-23-24"
+        //s now cookie will have Content : 22-23-24
+        alert("prodcut added to cart");
+    });
+
+
+
+</script>

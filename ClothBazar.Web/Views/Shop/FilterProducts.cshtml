@@ -1,0 +1,152 @@
+﻿@model ClothBazar.Web.ViewModels.FilteredProductsViewModel
+@{
+                
+                var defaultImageURL = "/Content/images/system/placeholder.png";
+}
+
+@if (Model.myPager != null && Model.myPager.TotalPages > 1)
+{
+    <div class="filter-shop clearfix">
+        <p class="showing-product float-right">
+            Showing @(((Model.myPager.CurrentPage - 1) * Model.myPager.PageSize) + 1 ) – @( ((Model.myPager.CurrentPage - 1) * Model.myPager.PageSize) + (Model.Products.Count < Model.myPager.PageSize ? Model.Products.Count : Model.myPager.PageSize) ) of @Model.myPager.TotalItems Products
+        </p>
+    </div><!-- /.filte-shop -->
+
+    <div class="product-content product-threecolumn product-slidebar clearfix">
+        <ul class="product style2 sd1">
+
+            @foreach (var product in Model.Products)
+            {
+                var imageUrl = string.IsNullOrEmpty(product.ImageURL) ? defaultImageURL : product.ImageURL;
+                <li class="product-item">
+                    <div class="product-thumb clearfix">
+                        <a href="#">
+                            <img src="@imageUrl" alt="image">
+                        </a>
+                    </div>
+                    <div class="product-info clearfix">
+                        <span class="product-title">@product.Name</span>
+                        <div class="price">
+                            <ins>
+                                <span class="amount">$@product.Price</span>
+                            </ins>
+                        </div>
+                    </div>
+                    <div class="add-to-cart text-center productAddToCart" data-id="@product.Id">
+                        <a>ADD TO CART</a>
+                    </div>
+                    <a href="#" class="like"><i class="fa fa-heart-o"></i></a>
+                </li>
+
+            }
+
+        </ul><!-- /.product -->
+    </div><!-- /.product-content -->
+
+}
+else
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrap-error text-center">
+                <div class="header-error">
+                    Oops,
+                </div>
+                <div class="content-error">
+                    <h2>No Products Found</h2>
+                    <p>It looks like there are no products in your Selected range click <a href="@Url.Action("Index","Shop")" class="btn-error">here</a> to reset Filters</p>
+                </div>
+            </div><!-- /.wrap-error -->
+        </div><!-- /.col-md-12 -->
+    </div>
+}
+
+
+
+@if (Model.myPager != null && Model.myPager.TotalPages > 1)
+{
+    //if pagger object is passed then we need to appply pagination
+
+    <div class="product-pagination text-center clearfix">
+        <ul class="flat-pagination">
+
+            @if (Model.myPager.CurrentPage > 1)  //then show previous and First Button otherwise
+            {//don,t show them or they will be hiddent if we are on first page
+
+
+                <li>
+                    <a data-href="@Url.Action("FilterProducts", "Shop", new { pageNo = 1, categoryId = Model.categoryId, sortBy = Model.sortBy })"  class="pageDataLink"><i class="fa fa-angle-left"></i><i class="fa fa-angle-left pageDataLink"></i><i class="fa fa-angle-left"></i></a>
+                </li>
+
+                <li>
+                    <a data-href="@Url.Action("FilterProducts", "Shop", new { pageNo = Model.myPager.CurrentPage - 1, categoryId = Model.categoryId, sortBy = Model.sortBy })"  class="pageDataLink"><i class="fa fa-angle-left pageDataLink"></i></a>
+                </li>
+
+            }
+
+            @for (int page = Model.myPager.StartPage; page <= Model.myPager.EndPage; page++)
+            {
+                //page will have the pageNo int and Endpage will have the pageNo of the Last Page
+                string activeClass = Model.myPager.CurrentPage == page ? "active bg-info" : string.Empty;
+
+                <li class="@activeClass"><a data-href="@Url.Action("FilterProducts", "Shop", new { pageNo = page, categoryId = Model.categoryId, sortBy = Model.sortBy })" class="pageDataLink"> @page </a></li>
+
+            }
+
+
+            @if (Model.myPager.CurrentPage < Model.myPager.TotalPages)//then show Last and Next Button otherwise
+            {  //don,t show them or they will be hiddent if last page
+
+                <li><a data-href="@Url.Action("FilterProducts", "Shop", new { pageNo = Model.myPager.CurrentPage + 1, categoryId = Model.categoryId, sortBy = Model.sortBy })" class="pageDataLink"><i class="fa fa-angle-right"></i></a></li>
+                <li><a data-href="@Url.Action("FilterProducts", "Shop", new { pageNo = Model.myPager.TotalPages, categoryId = Model.categoryId, sortBy = Model.sortBy })" class="pageDataLink"><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a></li>
+            }
+
+
+        </ul><!-- /.flat-pagination -->
+    </div>
+
+}
+
+<input type="hidden" id="SortBy" value="@Model.sortBy" />
+<input type="hidden" id="CategoryId" value="@Model.categoryId" />
+<input type="hidden" id="SearchTerm" value="@Model.searchTerm" />
+
+<script>
+    //here on .dataLink class obj click multiple requests were going for selecting a category or either sortby
+    //the page is calling this click listner various times in an increasing order i.e 1,2,4,8,16 and soon so we
+    //moved it to main file i.e Index.cshtml
+    $(".pageDataLink").click(function () {
+        var url = $(this).attr("data-href");
+        if (url != "" || url != undefined) {
+            GetData(url);
+        }
+    });
+
+    var allCartProducts; //created a Products var this will be having all the procucts adds to cart like array
+
+    $(".productAddToCart").click(function () {
+
+        var existingCookieData = $.cookie('CartProducts');
+        //if there are products already in the cookie i.e its not null,"",undefined either
+        if (existingCookieData != null && existingCookieData != "" && existingCookieData != undefined) {
+            allCartProducts = existingCookieData.split('-'); //then store them by splititng on basis of -
+        }
+        else {
+            allCartProducts = [];  //if null the initialize it an empty array so that we can push data
+        }
+        //first get the Id of the Product User Wants to Buy
+        var productId = $(this).attr('data-Id');
+        //then add this productId in allCartProducts Array/List using push
+        allCartProducts.push(productId);
+        //then we created a cookie named "CartProducts" and this cookie will holding the all productId's in allCartProducts which user want to buy
+        //{ path: '/' }  means that only / means this cookie will be accessible in whole Site pages
+        $.cookie('CartProducts', allCartProducts.join('-'), { path: '/' }); // but in browser when we see the cookie data after addind some products to cart
+        //we get  data/Content : 22%2C23%2C24  as allCartProducts is an array of strings so each element will be string so in case of
+        //array data we can see it in Console by just writting the array Name there we get  ["22", "23", "24"] this means cookie represent
+        // ',' as %2c either now we use it use something else which can be recognised e.g '-' so for this first we can use join()
+        // to convert this array to a single string i.e allCartProducts.Join() will return "22,23,24" and if allCartProducts.Join('-') then "22-23-24"
+        //s now cookie will have Content : 22-23-24
+        updateCartProducts();
+        swal("Success!", "prodcut added to cart", "success")
+    });
+</script>
